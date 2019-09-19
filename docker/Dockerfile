@@ -13,11 +13,13 @@ RUN apt-get update && apt-get upgrade -y \
 RUN conda update -n base conda
 RUN conda install -y \
         joblib \
+        python=3.6 \
         PyYAML==3.13
 RUN conda install -y -c conda-forge \
         pyopengl \
         xgboost \
-        nbdime
+        nbdime \
+        python-graphviz
 RUN pip install "urlextract"
 RUN pip install "gym[atari,box2d,classic_control]"
 RUN pip install "tensorflow-hub"
